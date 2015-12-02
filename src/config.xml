@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="zTACh1oiXt.WorkTracker" package="zTACh1oiXt" required_version="1.0"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal.320.320"/>
+    <icon src="icon.png" height="170" width="170"/>
+    <name>Work Tracker</name>
+    <preference name="workHours" value="8" readonly="false"/>
+    <preference name="breakHours" value="60" readonly="false"/>
+    <preference name="eyeBreak" value="true" readonly="false"/>
+    <preference name="shake" value="true" readonly="false"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:setting background-support="enable" encryption="disable" hwkey-event="enable"/>
+</widget>

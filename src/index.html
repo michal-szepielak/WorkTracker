@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <title>WorkTracker</title>
+    <link rel="stylesheet"  href="lib/tau/wearable/theme/default/tau.min.css">
+
+    <link rel="stylesheet"  href="css/style.css">
+    <link rel="stylesheet"  href="css/font-awesome.min.css">
+</head>
+<body>
+    <div class="ui-page ui-page-active" id="main">
+        <div id="sectionChanger" class="ui-content">
+            <div>
+                <section class="ui-section-active">
+                    <header class="ui-header ui-has-more">
+                        <h2 class="ui-title">Workday</h2>
+                        <a href="#uiDesc" class="fa fa-question-circle"></a>
+                    </header>
+                    <div class="ui-content">
+                        <div id="clock" class="clock">00:00:00</div>
+                        <div class="info-box">Quitting time: <div id="quittingTime" class="right">--:--</div></div>
+                        <div class="info-box">Break left: <div id="breakLeft" class="right">20 <small>minutes</small></div></div>
+                        <div class="icon-box">
+                            <a href="#" class="coffee-icon hidden" id="breakButtonIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64">
+                                    <g>
+                                        <g transform="matrix(1.1468939,0,0,1.116529,-9.5607593,-5.0345798)">
+                                            <g transform="matrix(0.60032251,0,0,0.73079052,29.615476,17.832322)">
+                                                <g transform="matrix(0.90408252,0,0,1.0618473,-3.9239413,-3.5566801)">
+                                                    <rect y="53.2" x="20.6" height="4.3" width="23.1" class="cup-handler"/>
+                                                </g>
+                                                <path d="m 50.5 32.7 c -3.7 0 -6.7 2.5 -6.7 5.5 0 3 3 5.5 6.7 5.5 3.7 0 6.8 -2.5 6.8 -5.5 0 -3 -3 -5.5 -6.8 -5.5 z m 0 2.8 c 1.9 0 3.4 1.3 3.4 2.8 0 1.6 -1.5 2.8 -3.4 2.8 -1.9 0 -3.4 -1.3 -3.4 -2.8 0 -1.6 1.5 -2.8 3.4 -2.8 z" class="cup-handler"/>
+                                            </g>
+                                            <path d="M 41.5 40.2 C 38.4 45.3 33.5 49 27.7 50.5 C 29.3 55 31.9 58.7 35.2 60.8 L 48.2 60.8 C 53.5 57.4 57.1 49.9 57.1 41.3 C 57.1 41 57.1 40.6 57.1 40.2 L 41.5 40.2 z " transform="matrix(0.87192024,0,0,0.8956328,8.3362195,4.5091348)" class="cup-inside"/>
+                                        </g>
+                                        <g transform="matrix(1.614803,0,0,1.66067,-12.28211,63.275601)">
+                                            <g transform="translate(-19.152786,23.436013)">
+                                                <path d="m 40.4 -57.8 c -7.1 0 -12.9 5.8 -12.9 12.9 0 7.1 5.8 12.9 12.9 12.9 7.1 0 12.9 -5.8 12.9 -12.9 0 -7.1 -5.8 -12.9 -12.9 -12.9 z m 0.4 2.1 c 5.6 0.2 10.1 4.7 10.4 10.3 l -2 0 0 1 2 0 c -0.3 5.5 -4.6 9.9 -10.1 10.2 l 0 -2.2 -1.1 0 0 2.2 c -0.1 -0 -0.1 -0 -0.2 -0 -5.5 -0.3 -9.9 -4.7 -10.1 -10.3 l 2.2 0 0 -1.1 -2.2 0 c 0.3 -5.5 4.6 -9.9 10 -10.2 l 0 1.9 1.1 0 z m -1 3.1 0 7.8 -0.2 0.3 0.2 0.1 0 0.3 0.5 0 4.9 2.8 0.7 -1.1 -5.1 -3 0 -7.1 z" class="clock"/>
+                                            </g>
+                                        </g>
+                                        <path d="m 51.3 23 c -0.2 0.3 -0.5 0.6 -0.7 0.9 -0.3 0.3 -0.6 0.6 -1 0.9 -0.4 0.3 -0.9 0.5 -1.3 0.8 -0.3 0.2 -0.5 0.5 -0.7 0.7 -0.1 0.3 -0.1 0.6 -0.1 0.9 0 0.3 0.1 0.6 0.3 0.9 0.2 0.3 0.3 0.6 0.6 0.9 0.2 0.3 0.5 0.6 0.7 0.9 0.2 0.3 0.4 0.5 0.6 0.8 0.2 0.3 0.5 0.6 0.7 0.9 0.2 0.3 0.4 0.6 0.6 0.9 0.2 0.3 0.3 0.7 0.4 1 0.1 0.4 0.1 0.7 0 1.1 -0.1 0.3 -0.3 0.6 -0.5 0.9 -0.3 0.3 -0.7 0.5 -1.1 0.8 -0.4 0.2 -0.8 0.4 -1.2 0.6 -1 0.5 -3.5 1.5 -0.5 0.2 0.1 -0 -0.1 0 -0.2 0.1 -0.1 0 -0.2 0.1 -0.3 0.2 -0.3 0.1 -0.6 0.3 -0.9 0.4 -0.1 0.1 -0.3 0.1 -0.4 0.2 l -1.7 0.5 0 0 c 0.1 -0.1 0.3 -0.1 0.4 -0.2 0.3 -0.2 0.6 -0.3 0.9 -0.4 0.2 -0.1 0.3 -0.2 0.5 -0.2 1.4 -0.6 2.9 -1.2 0.3 -0.1 -0.1 0 0.1 -0.1 0.2 -0.1 0.4 -0.2 0.8 -0.4 1.2 -0.6 0.4 -0.2 0.8 -0.4 1.1 -0.7 0.3 -0.3 0.5 -0.5 0.6 -0.8 0.1 -0.3 0.1 -0.7 0 -1 -0.1 -0.3 -0.2 -0.7 -0.4 -1 -0.2 -0.3 -0.4 -0.6 -0.6 -0.9 -0.2 -0.3 -0.5 -0.6 -0.7 -0.9 -0.2 -0.3 -0.4 -0.6 -0.6 -0.8 -0.2 -0.3 -0.5 -0.6 -0.7 -0.9 -0.2 -0.3 -0.4 -0.6 -0.6 -0.9 -0.1 -0.3 -0.3 -0.6 -0.3 -0.9 -0 -0.3 -0 -0.7 0.1 -1 0.1 -0.3 0.3 -0.6 0.7 -0.8 0.4 -0.3 0.7 -0.6 1.1 -0.9 0.4 -0.3 0.8 -0.5 1.1 -0.9 0.3 -0.3 0.6 -0.5 0.8 -0.8 l 1.7 -0.6 z" class="fog"/>
+                                        <path d="m 56.9 26.2 c -0.1 0.3 -0.3 0.5 -0.6 0.8 -0.2 0.3 -0.4 0.5 -0.7 0.8 -0.3 0.2 -0.7 0.4 -1 0.6 -0.2 0.2 -0.4 0.4 -0.5 0.6 -0.1 0.2 -0.1 0.5 -0.1 0.8 0 0.3 0.1 0.5 0.2 0.8 0.1 0.2 0.3 0.5 0.4 0.7 0.2 0.3 0.4 0.5 0.5 0.8 0.2 0.2 0.3 0.4 0.5 0.7 0.2 0.3 0.3 0.5 0.5 0.7 0.2 0.3 0.3 0.5 0.5 0.8 0.1 0.3 0.2 0.6 0.3 0.8 0.1 0.3 0.1 0.6 0 0.9 -0.1 0.3 -0.2 0.5 -0.4 0.7 -0.2 0.2 -0.5 0.4 -0.8 0.6 -0.3 0.2 -0.6 0.4 -0.9 0.5 -0.8 0.4 -2.7 1.2 -0.4 0.2 0 -0 -0.1 0 -0.1 0.1 -0.1 0 -0.2 0.1 -0.2 0.1 -0.2 0.1 -0.4 0.2 -0.6 0.3 -0.1 0.1 -0.2 0.1 -0.3 0.2 l -1.3 0.4 0 0 c 0.1 -0.1 0.2 -0.1 0.3 -0.2 0.2 -0.1 0.4 -0.2 0.7 -0.3 0.1 -0.1 0.2 -0.1 0.4 -0.2 1.1 -0.5 2.2 -1 0.3 -0.1 -0 0 0.1 -0 0.1 -0.1 0.3 -0.2 0.6 -0.3 0.9 -0.5 0.3 -0.2 0.6 -0.4 0.8 -0.6 0.2 -0.2 0.4 -0.4 0.4 -0.7 0.1 -0.3 0.1 -0.6 0 -0.9 -0.1 -0.3 -0.1 -0.6 -0.3 -0.8 -0.1 -0.3 -0.3 -0.5 -0.5 -0.8 -0.2 -0.2 -0.4 -0.5 -0.5 -0.7 -0.1 -0.2 -0.3 -0.5 -0.5 -0.7 -0.2 -0.3 -0.4 -0.5 -0.5 -0.8 -0.2 -0.2 -0.3 -0.5 -0.4 -0.7 -0.1 -0.3 -0.2 -0.5 -0.2 -0.8 -0 -0.3 -0 -0.5 0.1 -0.8 0.1 -0.3 0.3 -0.5 0.5 -0.7 0.3 -0.2 0.5 -0.5 0.8 -0.7 0.3 -0.2 0.6 -0.4 0.8 -0.7 0.2 -0.2 0.5 -0.4 0.6 -0.7 L 56.9 26.2 z" class="fog"/>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <footer class="ui-footer">
+                        <a href="#" class="ui-btn ui-color-green" id="startButton">START WORKING</a>
+                        <a href="#" class="ui-btn ui-color-red hidden" id="endButton">END OF WORK</a>
+                        <a href="#" class="ui-btn ui-color-orange hidden" id="workButton">BACK TO WORK</a>
+                        <a href="#" class="ui-btn ui-color-orange hidden" id="breakButtonSmall">TAKE A BREAK</a>
+                    </footer>
+                </section>
+                <section>
+                    <header class="ui-header">
+                        <h2 class="ui-title">Day Activity</h2>
+                    </header>
+                    <div class="ui-content" style="height: calc(100% - 60px)">
+                        <ul class="ui-listview" id="timeTable"></ul>
+                    </div>
+                </section>
+                <section>
+                    <header class="ui-header">
+                        <h2 class="ui-title">Work Tracker</h2>
+                    </header>
+                    <div class="ui-content" style="height: calc(100% - 60px)">
+                        <ul class="ui-listview">
+                            <li><a href="#settings">Settings</a></li>
+                            <li><a href="#howToUse">How to use</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#" onclick="app.exit();">Exit</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="eyePopup" class="ui-popup ui-popup-toast">
+            <div class="ui-popup-content">
+                Take a 5 minutes break for your eyes.
+            </div>
+        </div>
+        <div id="workEndPopup" class="ui-popup ui-popup-toast">
+            <div class="ui-popup-content">
+                Finish your tasks! You end your workday in 10 minutes!
+            </div>
+        </div>
+    </div>
+    <div class="ui-page" id="settings">
+        <header class="ui-header ui-has-more">
+            <h2 class="ui-title">Settings</h2>
+            <a href="#settingsDesc" class="fa fa-question-circle"></a>
+        </header>
+        <div class="ui-content">
+            <ul class="ui-listview">
+                <li class="li-has-multiline">
+                    <a href="#workingHoursSetting" data-rel="popup">
+                        Working hours
+                        <span class="li-text-sub" id="workDurationCaption">8 hours</span>
+                    </a>
+                </li>
+                <li class="li-has-multiline">
+                    <a href="#breakHoursSetting" data-rel="popup">
+                        Lunch break
+                        <span class="li-text-sub" id="breakDurationCaption">1 hour</span>
+                    </a>
+                </li>
+                <li class="li-has-checkbox">
+                    <label>
+                        Shake gesture
+                        <input type="checkbox" id="shakeSetting">
+                    </label>
+                </li>
+                <li class="li-has-checkbox">
+                    <label>
+                        Eye break
+                        <input type="checkbox" id="eyeBreakSetting">
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <!-- POPUPS -->
+        <div id="workingHoursSetting" class="ui-popup">
+            <div class="ui-popup-header">Working hours</div>
+            <div class="ui-popup-content">
+                Set how many hours do you work per day.
+                <div class="input-number">
+                    <a href="#" class="fa fa-caret-left"></a><div class="number" data-max="12" data-min="2">8</div><a href="#" class="fa fa-caret-right"></a>
+                </div>
+            </div>
+            <div class="ui-popup-footer">
+                <a id="workingHoursSave" href="#" class="ui-btn" data-rel="back">SAVE</a>
+            </div>
+        </div>
+        <div id="breakHoursSetting" class="ui-popup">
+            <div class="ui-popup-header">Lunch break duration</div>
+            <div class="ui-popup-content">
+                Set how many minutes your lunch break takes.
+                <div class="input-number">
+                    <a href="#" class="fa fa-caret-left"></a><div class="number" data-max="120" data-min="5" data-step="5">60</div><a href="#" class="fa fa-caret-right"></a>
+                </div>
+            </div>
+            <div class="ui-popup-footer">
+                <a id="breakHoursSave" href="#" class="ui-btn" data-rel="back">SAVE</a>
+            </div>
+        </div>
+    </div>
+    <!-- How To Use page -->
+    <div class="ui-page" id="howToUse">
+        <div class="ui-content">
+            <p class="basic-text-s-title">
+                Tap on <span class="green">Start working</span> button to start measure your working day. After pressing it all data about current day will be reset.
+                <br><br>When you end your day shift, tap on <span class="red">End of work</span> button.
+                <br><br>If you want to take a break just press a coffee icon. Icon color will change it's color to <span class="orange">orange</span>. If your break will be over tap on
+                <span class="orange">Back to work</span> button.
+            </p>
+        </div>
+    </div>
+    <!-- About page -->
+    <div class="ui-page" id="about">
+        <div class="ui-content">
+            <p class="basic-text-s-title">
+                <b>Work Tracker</b> is designed to track your working day. Application can run in background and track your work day. Use simple gesture to notify application
+                that you are starting or ending a break. It will remind you that your shift will end 10 minutes before quitting time.
+            </p>
+        </div>
+    </div>
+    <!-- UI Description -->
+    <div class="ui-page" id="uiDesc">
+        <div class="ui-content">
+            <p class="basic-text-s-title">
+                <b>Clock Timer</b> shows you how long you are at work.
+                <br><br>
+                <b>Quitting time</b> shows your estimated quitting time. Quitting time will extend while you are taking break.
+                <br><br>
+                <b>Break left</b> tells you how much time you have left for a break.
+                <br><br>
+                <b>Coffee break</b> indicates you if your are taking a break.
+            </p>
+        </div>
+    </div>
+    <!-- Settings Description -->
+    <div class="ui-page" id="settingsDesc">
+        <div class="ui-content">
+            <p class="basic-text-s-title">
+                Use <b>shake gesture</b> to start or end your break. You can put your app running in background and use two strong shakes to activate and deactivate
+                break mode. Changing mode will be confirmed by vibration. Shake won't work until you start your working day.
+                <br><br>
+                Check <b>Eye break</b> option to allow Work Tracker to notify you that it's time to take a 5 minutes break for your eyes. During this break don't look at computer
+                screen. Take a look outside the window and exercise your eyes. Keep your eyes in good condition! This "break" doesn't count as a break time.
+            </p>
+        </div>
+    </div>
+</body>
+<script src="js/globals.js"></script>
+
+<!-- @concatJS js/app.js -->
+<script src="js/gesture.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/time-table.js"></script>
+<script src="js/app.js"></script>
+<script src="js/app.ui.js"></script>
+<!-- @concatJS-end -->
+
+<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
+<!-- load javascript file for your application -->
+
+<script src="js/lowBatteryCheck.js"></script>
+<script>
+    var changer = document.getElementById("sectionChanger");
+    sectionChanger = tau.widget.SectionChanger(changer, {
+        circular: true,
+        scrollbar: "tab",
+        orientation: "horizontal",
+        useBouncingEffect: true
+    });
+</script>
+</html>

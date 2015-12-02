@@ -1,0 +1,20 @@
+{
+    "name": "worktracker",
+    "title": "Work tracker",
+    "description": "Work Tracker is designed to track your working day. Application can run in background and track your work day. Use simple gesture to notify application that you are starting or ending a break. It will remind you that your shift will end 10 minutes before quitting time.",
+    "version": "1.0",
+    "author": "Michał Szepielak",
+    "contributors": [
+    ],
+    "devDependencies": {
+        "grunt-jslint": "~1.1.12",
+        "grunt-contrib-less": "~0.7.0",
+        "grunt-contrib-clean": "0.5.0",
+        "grunt-contrib-copy": "0.5.0",
+        "grunt-contrib-concat": "0.5.0",
+        "grunt-contrib-uglify": "0.3.2",
+        "grunt-contrib-cssmin": "0.6.1",
+        "grunt-string-replace": "~0.2.7"
+    },
+    "main": "Gruntfile.js"
+}

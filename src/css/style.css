@@ -1,0 +1,179 @@
+.ui-listview li .li-text-sub {
+    display: block;
+    color: rgb(189, 167, 146);
+    font-size: 28px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 32px;
+}
+.ui-listview li.li-has-multiline {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    min-height: 100px;
+}
+
+.ui-listview li input[type="checkbox"],
+.ui-listview li input[type="radio"] {
+    position: absolute;
+    right: 8px;
+    top: 0px;
+    margin-top: 13px;
+}
+
+.basic-text-s-title {
+	margin: 16px 16px;
+	line-height: 40px;
+	font-size: 30px;
+}
+
+.clock {
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.right {
+    float: right;
+}
+
+.info-box {
+    display: block;
+    line-height: 1em;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.icon-box {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.input-number {
+    font-size: 8rem;
+    text-align: center;
+}
+.input-number .number {
+    display: inline-block;
+    font-size: 0.7em;
+    line-height: 1.42em; /* ~10/7 */
+    margin: 0 0.4em;
+    vertical-align: top;
+}
+.input-number .fa {
+    vertical-align: top;
+}
+
+.ui-has-more .fa {
+	color: rgba(116,196,252,1);
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 68px;
+	line-height: 60px;
+	text-align: right;
+	padding-right: 16px;
+}
+
+.coffee-icon {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+}
+.coffee-icon svg {
+    height: 100%;
+}
+
+span.green {
+	color: rgba(97,163,16,1);
+}
+span.orange {
+	color: rgba(237,134,0,1);
+}
+span.red {
+	color: rgba(207,36,2,1);
+}
+
+
+/* Styles for clock svg */
+.coffee-icon svg .fog,
+.coffee-icon svg .clock,
+.coffee-icon svg .cup-inside,
+.coffee-icon svg .cup-handler,
+.coffee-icon svg .cup-bottom {
+    fill: #fff;
+    stroke:	#fff;
+    -webkit-transition: all 200ms 0;
+    -moz-transition: all 200ms 0;
+    -ms-transition: all 200ms 0;
+    -o-transition: all 200ms 0;
+    transition: all 200ms 0;
+}
+
+.coffee-icon svg .fog,
+.coffee-icon svg .clock,
+.coffee-icon svg .cup-inside,
+.coffee-icon svg .cup-handler {
+    stroke-width: 0;
+}
+
+.coffee-icon.active svg .fog,
+.coffee-icon.active svg .clock,
+.coffee-icon.active svg .cup-inside,
+.coffee-icon.active svg .cup-handler,
+.coffee-icon.active svg .cup-bottom {
+    fill: rgba(237, 134, 0, 1);
+    stroke:	rgba(237, 134, 0, 1);
+}
+/* END Styles for clock svg */
+
+#breakButtonSmall {
+	display: none;
+}
+
+@media screen and (max-height: 480px) {
+	#breakButtonIcon svg {
+		display: none;
+	}
+	.ui-footer {
+		height: auto !important;
+	}
+	.ui-footer .ui-btn {
+		display: inline-block;
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+		padding: 1rem;
+		width: 50%;
+		white-space: normal;
+	}
+
+	#breakButtonRight {
+		display: inline-block;
+		height: 50px;
+		width: 50%;
+		background-color: blue;
+	}
+
+	#startButton, #workButton {
+		width: 100%;
+	}
+	#breakButtonSmall {
+		display: inline-block;
+		float: right;
+	}
+	#breakButtonSmall.active {
+		display: none;
+	}
+
+	.input-number {
+		font-size: 6rem;
+	}
+}

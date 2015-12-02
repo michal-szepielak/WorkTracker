@@ -1,0 +1,6 @@
+/*
+ * <%= pkg.title %> v. <%= pkg.version %>
+ * Author: <%= pkg.author %>
+ */
+
+
